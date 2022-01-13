@@ -1,0 +1,22 @@
+# Define the 'local' links for the module
+
+entry.settings_tab:
+  route_name: timesheet.entry_settings
+  title: Settings
+  base_route: timesheet.entry_settings
+
+entry.view:
+  route_name: entity.timesheet_entry.canonical
+  base_route: entity.timesheet_entry.canonical
+  title: View
+
+entry.page_edit:
+  route_name: entity.timesheet_entry.edit_form
+  base_route: entity.timesheet_entry.canonical
+  title: Edit
+
+entry.delete_confirm:
+  route_name:  entity.timesheet_entry.delete_form
+  base_route:  entity.timesheet_entry.canonical
+  title: Delete
+  weight: 10

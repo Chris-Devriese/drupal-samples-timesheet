@@ -1,0 +1,10 @@
+# Define the menu links for this module
+entity.timesheet_entry.collection:
+  title: 'Entry Timesheet sample'
+  route_name: entity.timesheet_entry.collection
+  description: 'List entries'
+timesheet_entry.admin.structure.settings:
+  title: 'entry settings'
+  description: 'Configure entry entity'
+  route_name:  timesheet.entry_settings
+  parent: system.admin_structure

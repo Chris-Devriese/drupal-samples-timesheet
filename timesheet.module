@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @defgroup timesheet Sample: Entry Entity
+ * @ingroup Drupal test
+ * @{
+ * Implement a entry entity.
+ *
+ * This module demonstrates implementing a entry entity.
+ *
+ * Entity API is the API that stores pieces of entry and configuration for
+ * Drupal core.
+ *
+ * These entities are called Entry, and are known
+ * internally by the machine name timesheet_entry.
+ *
+ * Entry is a fieldable entry entity used to hold structured information
+ * without the overhead of using a node entry type. 'Fieldable' means you can
+ * attach fields to it, like you can with nodes.
+ *
+ * The Entry entity will demonstrate the main tasks for an entity:
+ * - define
+ * - save
+ * - load
+ * - view
+ * - edit
+ * - delete
+ * - control access
+ *
+ *
+ * @see Drupal\timesheet\Entity\Entry
+ * @see config_entity_sample
+ * }
+ */
+
+/**
+ * @file
+ * Explains how a module declares theme functions, preprocess functions, and
+ * templates.
+ *
+ * The underlying approach is that a module should allow themes to do all
+ * rendering, but provide default implementations where appropriate.
+ *
+ * Modules are also expected to leave data as render arrays as long as possible,
+ * leaving rendering to theme functions and templates.
+ */
+
+/**
+ * Implements hook_theme(). Register a module or theme's theme implementations.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function timesheet_theme() {
+  return [
+    'timesheet_entry' => [
+      'render element' => 'elements',
+      'file' => 'timesheet.theme.inc',
+    ],
+  ];
+}
+

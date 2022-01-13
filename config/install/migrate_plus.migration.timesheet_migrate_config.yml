@@ -1,0 +1,59 @@
+id: timesheet_migrate_config
+label: Import timesheet entries
+migration_group: default
+
+source:
+  plugin: 'csv'
+  # Full path to the file.
+  path: 'modules/custom/timesheet/entries.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The row to be used as the CSV header (indexed from 0),
+  # or null if there is no header row.
+  header_offset: 0
+  # The column(s) to use as a key. Each column specified will
+  # create an index in the migration table and too many columns
+  # may throw an index size error.
+  ids:
+    - id
+  # Here we identify the columns of interest in the source file.
+  # Each numeric key is the 0-based index of the column.
+  # For each column, the key below is the field name assigned to
+  # the data on import, to be used in field mappings below.
+  # The label value is a user-friendly string for display by the
+  # migration UI.
+  fields:
+    0:
+      name: id
+      label: 'row Id'
+    1:
+      name: title
+      label: 'Title'
+    2:
+      name: year
+      label: 'entry year'
+    3:
+      name: week
+      label: 'entry week'
+    4:
+      name: total_time
+      label: 'entry total time'
+    5:
+      name: user_id
+      label: 'associated user'
+
+process:
+  title: title
+  body: body
+  year: year
+  week: week
+  total_time: total_time
+  user_id: user_id
+  type:
+    plugin: default_value
+    default_value: timesheet_entry
+
+destination:
+  plugin: entity:timesheet_entry

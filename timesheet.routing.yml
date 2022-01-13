@@ -1,0 +1,64 @@
+# Route names
+entity.timesheet_entry.canonical:
+  path: '/timesheet_entry/{timesheet_entry}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the entry
+    # entity. This marks this route as belonging to this entity type.
+    _entity_view: 'timesheet_entry'
+    _title: 'Entry content'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix ('view')
+    # as the $operation parameter to checkAccess().
+    _entity_access: 'timesheet_entry.view'
+
+entity.timesheet_entry.collection:
+  path: '/timesheet_entry/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the entry entity.
+    _entity_list: 'timesheet_entry'
+    _title: 'Entry list'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view entry entity'
+
+timesheet.entry_add:
+  path: '/timesheet_entry/add'
+  defaults:
+    # Calls the form.add controller, defined in the entry entity.
+    _entity_form: timesheet_entry.default
+    _title: 'Add entry'
+  requirements:
+    # Use the entity's access controller. _entity_create_access tells the router
+    # to use the access controller's checkCreateAccess() method instead of
+    # checkAccess().
+    _entity_create_access: 'timesheet_entry'
+
+entity.timesheet_entry.edit_form:
+  path: '/timesheet_entry/{timesheet_entry}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the entry entity.
+    _entity_form: timesheet_entry.default
+    _title: 'Edit entry'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix
+    # ('update') as the $operation parameter to checkAccess().
+    _entity_access: 'timesheet_entry.update'
+
+entity.timesheet_entry.delete_form:
+  path: '/entry/{timesheet_entry}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the entry entity.
+    _entity_form: timesheet_entry.delete
+    _title: 'Delete entry'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix
+    # ('delete') as the $operation parameter to checkAccess().
+    _entity_access: 'timesheet_entry.delete'
+
+timesheet.entry_settings:
+  path: '/admin/structure/timesheet_entry_settings'
+  defaults:
+    _form: '\Drupal\timesheet\Form\EntrySettingsForm'
+    _title: 'entry settings'
+  requirements:
+    _permission: 'administer entry entity'

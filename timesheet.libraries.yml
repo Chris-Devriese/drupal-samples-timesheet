@@ -1,0 +1,5 @@
+list:
+  css:
+    theme:
+      css/theme.css: {preprocess: false}
+

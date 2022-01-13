@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a timesheet entry entity.
+ *
+ * This template is used when viewing a registered timesheet entry page,
+ * e.g., /timesheet_entry/{timesheet_entry_id}.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.title'.
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_timesheet_entry()
+ */
+#}
+<article{{ attributes }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</article>
