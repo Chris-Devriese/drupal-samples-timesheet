@@ -1,3 +1,7 @@
+CRUD demo Module which uses timesheet entries for recording tasks.
+The module can import csv entries from a file on module activation
+
+
 HELPFULL CMD LINE TOOLS
 -----------------------
 - create a UUID for configuration file:
